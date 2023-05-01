@@ -78,13 +78,16 @@ main {
 
 .message {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 40vh;
+    background-color: #FFFFFF;
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
-.muñeco {
+.image {
     display: none;
 }
 
@@ -98,8 +101,10 @@ main {
     width: 327px;
     height: 186px;
     border-radius: 32px;
-    background-color: #FFFFFF;
     margin: 0 auto;
+}
+
+.box-shadow {
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
@@ -227,7 +232,7 @@ main {
         height: 122px;
     }
     
-    .muñeco {
+    .image {
         display: block;
         width: 320px;
         height: 304px;
@@ -238,5 +243,41 @@ main {
         height: 90%;
         border-radius: none;
         box-shadow: none;
+    }
+
+    .copy {
+        width: 280px;
+        height: 52px;
+        border-radius: 24px;
+        text-align: center;
+        font-size: 12px;
+        background-color: #FFFFFF;
+        border: 2px solid #0A3871;
+        padding: 1rem;
+        cursor: pointer;
+        transition: background-color 500ms ease-in-out;
+    }
+
+    .copy:hover {
+        background-color: #0A3871;
+        color: white;
+        border: 2px solid red;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .flex-between {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .margin-bottom {
+        margin-bottom: 3.5rem;
     }
 }

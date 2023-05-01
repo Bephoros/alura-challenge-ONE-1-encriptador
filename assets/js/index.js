@@ -2,7 +2,11 @@ const d = document,
       encryptButton = d.querySelector('.encriptar'),
       decryptButton = d.querySelector('.desencriptar'),
       textField = d.querySelector('.textarea'),
-      messageBox = d.querySelector('.small-box')
+      message = d.querySelector('.message'),
+      messageContainer = d.querySelector('.message-box'),
+      messageBox = d.querySelector('.small-box'),
+      image = d.querySelector(".image"),
+      copyButton = d.querySelector('.copy')
 
 let data = ""
 
@@ -54,6 +58,10 @@ const decrypt = (text) => {
     return decryptedText
 }
 
+d.addEventListener("DOMContentLoaded", e => {
+    textField.value = ""
+})
+
 textField.addEventListener("input", e => {
     data = e.target.value.toLowerCase().trim()
 })
@@ -61,6 +69,11 @@ textField.addEventListener("input", e => {
 encryptButton.addEventListener("click", e => {
     if(data.length > 0) {
         let encryptedMessage = encrypt(data)
+        messageContainer.classList.add("flex-between")
+        messageContainer.classList.remove("box-shadow")
+        image.classList.add("hidden")
+        copyButton.classList.remove("hidden")
+        copyButton.classList.add("margin-bottom")
         messageBox.innerHTML = `<p>${encryptedMessage}</p>`
     }
 })
@@ -70,4 +83,8 @@ decryptButton.addEventListener("click", e => {
         let decryptedMessage = decrypt(data)
         messageBox.innerHTML = `<p>${decryptedMessage}</p>`
     }
+})
+
+copyButton.addEventListener("click", e => {
+    navigator.clipboard.writeText(messageBox.textContent)
 })
