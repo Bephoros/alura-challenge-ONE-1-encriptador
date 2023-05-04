@@ -93,6 +93,7 @@ main {
 
 .message-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -127,6 +128,52 @@ main {
     font-size: 16px;
 }
 
+.copy {
+    width: 280px;
+    height: 52px;
+    border-radius: 24px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    border: 2px solid #0A3871;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 500ms ease-in-out;
+}
+
+.copy:hover {
+    background-color: #0A3871;
+    color: white;
+    border: 2px solid red;
+}
+
+.flex-between {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.margin-bottom {
+    margin-bottom: 3.5rem;
+}
+
+.final-message {
+    padding: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 10vh;
+    background-color: #CCCCCC;
+}
+
 @media screen and (min-width: 768px) {
     .buttons {
         flex-direction: row;
@@ -139,17 +186,28 @@ main {
     }
 
     .message {
-        min-height: 20vh;
+        min-height: 40vh;
     }
 
     .message-box {
         width: 688px;
-        height: 133px;
+        height: 200px;
+        margin-bottom: 0;
     }
 
     .small-box {
         width: 624px;
         height: 69px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 10vh;
+        background-color: #CCCCCC;
     }
 }
 
@@ -157,8 +215,8 @@ main {
     body {
         display: grid;
         grid-template-columns: 10% 1fr;
-        grid-template-rows: 100%;
-        gap: 10px;
+        grid-template-rows: 1fr auto;
+        gap: 1rem;
         box-sizing: border-box;
     }
 
@@ -245,25 +303,6 @@ main {
         box-shadow: none;
     }
 
-    .copy {
-        width: 280px;
-        height: 52px;
-        border-radius: 24px;
-        text-align: center;
-        font-size: 12px;
-        background-color: #FFFFFF;
-        border: 2px solid #0A3871;
-        padding: 1rem;
-        cursor: pointer;
-        transition: background-color 500ms ease-in-out;
-    }
-
-    .copy:hover {
-        background-color: #0A3871;
-        color: white;
-        border: 2px solid red;
-    }
-
     .hidden {
         display: none;
     }
@@ -276,8 +315,24 @@ main {
         justify-content: space-between;
         align-items: center;
     }
-
+    
     .margin-bottom {
         margin-bottom: 3.5rem;
+    }
+
+    footer {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 10vh;
+        background-color: #CCCCCC;
+    }
+
+    footer > p {
+        margin-right: 8rem;
     }
 }
