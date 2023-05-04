@@ -1,5 +1,6 @@
 # alura-challenge-ONE-1-encriptador
-El Encriptador es una aplicación web que te permite encriptar y desencriptar textos de manera sencilla. #challengeonecodificador5
+## #challengeonecodificador5
+El Encriptador es una aplicación web que te permite encriptar y desencriptar textos de manera sencilla.
 
 # Características
 * Encriptación de texto: Permite a los usuarios encriptar mensajes sensibles de forma segura.
